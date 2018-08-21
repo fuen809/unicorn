@@ -505,7 +505,7 @@ var pJS = function(tag_id, params){
   };
 
   pJS.fn.particlesUpdate = function(){
-
+	
     for(var i = 0; i < pJS.particles.array.length; i++){
 
       /* the particle */
@@ -860,7 +860,7 @@ var pJS = function(tag_id, params){
 
     /* on click event */
     else if(pJS.interactivity.events.onclick.enable && isInArray('bubble', pJS.interactivity.events.onclick.mode)){
-
+	
 
       if(pJS.tmp.bubble_clicking){
         var dx_mouse = p.x - pJS.interactivity.mouse.click_pos_x,
@@ -1072,7 +1072,7 @@ var pJS = function(tag_id, params){
 
     /* detect mouse pos - on hover / click event */
     if(pJS.interactivity.events.onhover.enable || pJS.interactivity.events.onclick.enable){
-
+		
       /* el on mousemove */
       pJS.interactivity.el.addEventListener('mousemove', function(e){
 
@@ -1110,8 +1110,15 @@ var pJS = function(tag_id, params){
 
     /* on click event */
     if(pJS.interactivity.events.onclick.enable){
-
+		
+		
       pJS.interactivity.el.addEventListener('click', function(){
+		//alert("test");
+		var unicorns = ["img/unicorn1.png", "img/unicorn2.png", "img/unicorn3.png", "img/unicorn4.png" ];
+		var source = unicorns[Math.floor((Math.random() * unicorns.length))];
+
+		pJSDom[0].pJS.particles.shape.image.src = source;
+		pJSDom[0].pJS.fn.particlesRefresh()
 
         pJS.interactivity.mouse.click_pos_x = pJS.interactivity.mouse.pos_x;
         pJS.interactivity.mouse.click_pos_y = pJS.interactivity.mouse.pos_y;
